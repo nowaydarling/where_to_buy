@@ -91,17 +91,19 @@
     .filters-inner {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 16px 24px;
+      padding: 12px 16px;
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
       align-items: center;
     }
+
+
 
     .search-box {
       position: relative;
       flex: 1;
-      min-width: 200px;
+      min-width: 150px;
       max-width: 320px;
     }
 
@@ -441,16 +443,68 @@
     }
 
     /* ── RESPONSIVE ── */
+
+    /* Tablet: 601px – 900px */
+    @media (min-width: 601px) and (max-width: 900px) {
+      .header-inner { padding: 14px 20px; }
+      .header-logo { height: 52px; }
+      .filters-inner { padding: 12px 20px; gap: 10px; }
+      .search-box { max-width: 260px; }
+      .filter-select { min-width: 150px; }
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .grid-wrap { padding: 8px 20px 32px; }
+      .results-bar { padding: 16px 20px 8px; }
+    }
+
+    /* Mobile: up to 600px */
     @media (max-width: 600px) {
-      .header-inner { padding: 12px 16px; }
-      .hero { padding: 40px 16px 52px; }
-      .filters-inner { padding: 12px 16px; }
-      .grid-wrap { padding: 8px 16px 32px; }
-      .results-bar { padding: 16px 16px 8px; }
+      .header-inner { padding: 10px 14px; }
+      .header-logo { height: 44px; }
       .header-badge { display: none; }
-      .filters-wrap { top: 72px; }
-      .filters-inner { flex-wrap: nowrap; gap: 8px; }
-      .filter-select { min-width: 110px; font-size: 12px; }
+
+      .filters-wrap { top: 64px; }
+      .filters-inner {
+        padding: 10px 14px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 8px;
+      }
+      .search-box {
+        grid-column: 1 / -1;
+        max-width: 100%;
+        width: 100%;
+      }
+      .filter-group {
+        width: 100%;
+      }
+      .filter-select {
+        width: 100%;
+        min-width: 0;
+        font-size: 13px;
+      }
+      .filter-label { display: none; }
+
+      .results-bar { padding: 12px 14px 6px; }
+      .grid-wrap { padding: 6px 14px 28px; }
+      .grid { grid-template-columns: 1fr; gap: 14px; }
+
+      .card-name { font-size: 15px; }
+      .card-body { padding: 14px 16px 16px; }
+      .card-top { padding: 14px 16px 12px; }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .footer-links { flex-wrap: wrap; }
+      .footer-copy { font-size: 10px; }
+    }
+
+    /* Large desktop: 1400px+ */
+    @media (min-width: 1400px) {
+      .grid { grid-template-columns: repeat(4, 1fr); }
     }
   </style>
 </head>
